@@ -2,9 +2,17 @@ package Fioshi.com.github.PicPaySimplificado.domain.model.Payment;
 
 import Fioshi.com.github.PicPaySimplificado.domain.model.User.User;
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
 
 @Entity
 @Table(name = "tb_payment")
+@AllArgsConstructor
+@NoArgsConstructor
+@Getter
+@EqualsAndHashCode(of = "id")
 public class Payment {
 
     @Id
