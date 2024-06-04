@@ -28,4 +28,8 @@ public class Account {
     @JoinColumn(name = "user_id", nullable = false)
     private User user;
 
+    public Account(User user) {
+        this.user = user;
+        this.balance = new BigDecimal("0");
+    }
 }
