@@ -29,16 +29,25 @@ public class User {
     private String cpf;
     private String email;
     private String password;
+
+    @Enumerated(EnumType.STRING)
     private TypeUser typeUser;
 
-    @OneToMany(mappedBy = "user")
-    private List<Account> accounts;
+    @OneToOne(mappedBy = "user", cascade = CascadeType.ALL)
+    private Account account;
 
     @OneToMany(mappedBy = "payer")
     private List<Payment> paymentsAsPayer;
 
     @OneToMany(mappedBy = "payee")
     private List<Payment> paymentsAsPayee;
-    
 
+    public void dtoToEntity(UserDTO dto) {
+        this.name = dto.name();
+        this.surname = dto.surname();
+        this.cpf = dto.cpf();
+        this.email = dto.email();
+        this.password = dto.password();
+        this.typeUser = dto.typeUser();
+    }
 }
