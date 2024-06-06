@@ -6,9 +6,6 @@ import jakarta.validation.constraints.NotNull;
 public record PaymentDTO(
 
         @NotNull
-        Long id,
-
-        @NotNull
         Double value,
 
         @NotNull
