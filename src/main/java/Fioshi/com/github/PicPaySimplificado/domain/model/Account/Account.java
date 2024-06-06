@@ -19,7 +19,6 @@ public class Account {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "account_id")
     private Long id;
 
     private BigDecimal balance;
@@ -30,6 +29,15 @@ public class Account {
 
     public Account(User user) {
         this.user = user;
-        this.balance = new BigDecimal("0");
+        this.balance = new BigDecimal("100");
+    }
+
+    public void transfer(BigDecimal value){
+
+         this.balance = this.balance.subtract(value);
+    }
+
+    public void receive(BigDecimal value){
+        this.balance = this.balance.add(value);
     }
 }
