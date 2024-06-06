@@ -20,7 +20,6 @@ public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "user_id")
     private long id;
 
     private String name;
@@ -36,11 +35,6 @@ public class User {
     @OneToOne(mappedBy = "user", cascade = CascadeType.ALL)
     private Account account;
 
-    @OneToMany(mappedBy = "payer")
-    private List<Payment> paymentsAsPayer;
-
-    @OneToMany(mappedBy = "payee")
-    private List<Payment> paymentsAsPayee;
 
     public void dtoToEntity(UserDTO dto) {
         this.name = dto.name();
