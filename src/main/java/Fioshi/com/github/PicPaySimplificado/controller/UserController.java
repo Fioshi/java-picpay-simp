@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.io.IOException;
+
 @RestController
 @RequestMapping("/picpay/user")
 public class UserController {
@@ -17,7 +19,7 @@ public class UserController {
     private UserService userService;
 
     @PostMapping
-    public ResponseEntity<String> insertUser(@RequestBody UserDTO dto){
+    public ResponseEntity<String> insertUser(@RequestBody UserDTO dto) throws IOException {
         userService.insert(dto);
         return ResponseEntity.ok("Criado com sucesso");
     }
