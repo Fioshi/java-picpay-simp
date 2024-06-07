@@ -5,10 +5,12 @@ import Fioshi.com.github.PicPaySimplificado.domain.model.Payment.PaymentDTO;
 import Fioshi.com.github.PicPaySimplificado.domain.model.Payment.validations.PaymentValidation;
 import Fioshi.com.github.PicPaySimplificado.domain.repository.AccountRepository;
 import Fioshi.com.github.PicPaySimplificado.domain.repository.PaymentRepository;
+import Fioshi.com.github.PicPaySimplificado.infra.exception.AuthorizationException;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.io.IOException;
 import java.math.BigDecimal;
 import java.util.List;
 
@@ -26,12 +28,12 @@ public class PaymentService {
     private AccountService accountService;
 
     @Autowired
-    private NotifyService notifyService;
+    private AuthorizationService authorizationService;
 
     @Autowired
     private List<PaymentValidation> validations;
 
-    @Transactional
+    @Transactional(rollbackOn = AuthorizationException.class)
     public void payment(PaymentDTO dto){
 
         var payee = accountRepository.getReferenceById(dto.payee());
@@ -48,5 +50,7 @@ public class PaymentService {
         paymentRepository.save(payment);
 
         accountService.updateValues(payment.getValue(), payee, payer);
+
+        authorizationService.authorization();
     }
 }
