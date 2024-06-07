@@ -1,4 +1,4 @@
-package Fioshi.com.github.PicPaySimplificado.configuration;
+package Fioshi.com.github.PicPaySimplificado.infra.configuration;
 
 import Fioshi.com.github.PicPaySimplificado.domain.model.Payment.validations.PaymentValidation;
 import org.springframework.context.annotation.Bean;
