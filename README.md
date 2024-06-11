@@ -18,10 +18,10 @@ Após iniciar a aplicação, acesse http://localhost:8080/swagger-ui.html para v
 
 ## ⚙️ Funcionalidades Implementadas
 
-✅ Validação na criação de contas: Implementação de regras de negócio para garantir que todas as contas criadas sejam válidas.
-💸 Pagamentos: Sistema robusto para realizar pagamentos entre usuários, incluindo verificação e confirmação.
-📧 Envio de e-mail pós-pagamento: Notificações por e-mail enviadas automaticamente após a realização de pagamentos.
-🔒 Sistema autorizador externo de pagamentos: Integração com um sistema externo para autorização de pagamentos, garantindo segurança e confiabilidade.
+- ✅ Validação na criação de contas: Implementação de regras de negócio para garantir que todas as contas criadas sejam válidas.
+- 💸 Pagamentos: Sistema robusto para realizar pagamentos entre usuários, incluindo verificação e confirmação.
+- 📧 Envio de e-mail pós-pagamento: Notificações por e-mail enviadas automaticamente após a realização de pagamentos.
+- 🔒 Sistema autorizador externo de pagamentos: Integração com um sistema externo para autorização de pagamentos, garantindo segurança e confiabilidade.
 
 ## ⚙️ Configuração do Projeto
 
