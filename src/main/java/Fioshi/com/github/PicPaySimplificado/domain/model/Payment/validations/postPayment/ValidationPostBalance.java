@@ -1,4 +1,4 @@
-package Fioshi.com.github.PicPaySimplificado.domain.model.Payment.validations;
+package Fioshi.com.github.PicPaySimplificado.domain.model.Payment.validations.postPayment;
 
 import Fioshi.com.github.PicPaySimplificado.domain.model.Account.Account;
 import Fioshi.com.github.PicPaySimplificado.infra.exception.AuthorizationException;
@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 import java.math.BigDecimal;
 
 @Component
-public class ValidationBalance implements PaymentValidation {
+public class ValidationPostBalance implements PaymentValidationPost {
 
     @Override
     public void validation(Double value, Account payee, Account payer) {

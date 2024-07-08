@@ -1,4 +1,4 @@
-package Fioshi.com.github.PicPaySimplificado.domain.model.Payment.validations;
+package Fioshi.com.github.PicPaySimplificado.domain.model.Payment.validations.postPayment;
 
 import Fioshi.com.github.PicPaySimplificado.domain.model.Account.Account;
 import Fioshi.com.github.PicPaySimplificado.domain.model.User.TypeUser;
@@ -6,7 +6,7 @@ import Fioshi.com.github.PicPaySimplificado.infra.exception.AuthorizationExcepti
 import org.springframework.stereotype.Component;
 
 @Component
-public class ValidationTypeUser implements PaymentValidation {
+public class ValidationPostTypeUser implements PaymentValidationPost {
 
     @Override
     public void validation(Double value, Account payee, Account payer) {
