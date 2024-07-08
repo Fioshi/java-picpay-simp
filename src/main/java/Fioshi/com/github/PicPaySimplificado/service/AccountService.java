@@ -1,7 +1,7 @@
 package Fioshi.com.github.PicPaySimplificado.service;
 
 import Fioshi.com.github.PicPaySimplificado.domain.model.Account.Account;
-import Fioshi.com.github.PicPaySimplificado.domain.model.User.TypeUser;
+import Fioshi.com.github.PicPaySimplificado.domain.model.Account.AccountDTO;
 import Fioshi.com.github.PicPaySimplificado.domain.model.User.User;
 import Fioshi.com.github.PicPaySimplificado.domain.repository.AccountRepository;
 import jakarta.transaction.Transactional;
@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
+import java.util.List;
 
 @Service
 public class AccountService {
@@ -32,4 +33,11 @@ public class AccountService {
         accountRepository.save(payer);
     }
 
+    public List<AccountDTO> getAllAccounts(){
+        return accountRepository.findAll().stream().map(AccountDTO::new).toList();
+    }
+
+    public Account getAccount (Long id) {
+        return accountRepository.getReferenceById(id);
+    }
 }

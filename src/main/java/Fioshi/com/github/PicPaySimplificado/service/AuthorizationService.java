@@ -12,7 +12,7 @@ import java.net.URL;
 public class AuthorizationService {
 
     @SneakyThrows
-    public void authorization() {
+    public void authorization() throws IOException {
 
             URL url = new URL("https://util.devi.tools/api/v2/authorize");
             HttpURLConnection connection = (HttpURLConnection) url.openConnection();

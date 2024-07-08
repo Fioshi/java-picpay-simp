@@ -18,8 +18,7 @@ public class NotifyService {
             if (responseCode == HttpURLConnection.HTTP_OK ||
                     responseCode == HttpURLConnection.HTTP_CREATED ||
                     responseCode == HttpURLConnection.HTTP_NO_CONTENT) {
-                return "Notificação enviada para: " + user.getName() + " " + user.getSurname()
-                        ;
+                return "Notificação enviada para: " + user.getName() + " " + user.getSurname();
             } else {
                 return "O serviço falhou";
             }

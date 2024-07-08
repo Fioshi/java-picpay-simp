@@ -1,12 +1,14 @@
 package Fioshi.com.github.PicPaySimplificado.controller;
 
 import Fioshi.com.github.PicPaySimplificado.domain.model.Payment.PaymentDTO;
+import Fioshi.com.github.PicPaySimplificado.domain.model.Payment.PaymentDTOGet;
 import Fioshi.com.github.PicPaySimplificado.service.PaymentService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+import java.io.IOException;
+import java.util.List;
 
 @RestController
 @RequestMapping("/picpay/payment")
@@ -16,9 +18,13 @@ public class PaymentController {
     private PaymentService service;
 
     @PostMapping
-    public void payment(@RequestBody PaymentDTO dto){
+    public void payment(@RequestBody PaymentDTO dto) throws IOException {
         service.payment(dto);
-
     }
 
+    @GetMapping("payer/{payer}")
+    public ResponseEntity<List<PaymentDTOGet>> getPayments(@PathVariable Long payer){
+        var payments = service.getPayments(payer);
+        return ResponseEntity.ok(payments);
+    }
 }
