@@ -13,7 +13,6 @@ import java.math.BigDecimal;
 @Table(name = "tb_account")
 @AllArgsConstructor
 @NoArgsConstructor
-@Getter
 @EqualsAndHashCode(of = "id")
 public class Account {
 
@@ -27,6 +26,9 @@ public class Account {
     @JoinColumn(name = "user_id", nullable = false)
     private User user;
 
+    @Version
+    private Integer version;
+
     public Account(User user) {
         this.user = user;
         this.balance = new BigDecimal("100");
@@ -39,5 +41,21 @@ public class Account {
 
     public void receive(BigDecimal value){
         this.balance = this.balance.add(value);
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public BigDecimal getBalance() {
+        return balance;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public Integer getVersion() {
+        return version;
     }
 }
