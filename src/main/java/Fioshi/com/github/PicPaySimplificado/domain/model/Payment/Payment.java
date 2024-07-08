@@ -4,10 +4,7 @@ import Fioshi.com.github.PicPaySimplificado.domain.model.Account.Account;
 import Fioshi.com.github.PicPaySimplificado.domain.model.User.TypeUser;
 import Fioshi.com.github.PicPaySimplificado.domain.model.User.User;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.math.BigDecimal;
 
@@ -15,7 +12,6 @@ import java.math.BigDecimal;
 @Table(name = "tb_payment")
 @AllArgsConstructor
 @NoArgsConstructor
-@Getter
 @EqualsAndHashCode(of = "id")
 public class Payment {
 
@@ -39,4 +35,19 @@ public class Payment {
         this.payee = payee;
     }
 
+    public Long getId() {
+        return id;
+    }
+
+    public Double getValue() {
+        return value;
+    }
+
+    public Account getPayer() {
+        return payer;
+    }
+
+    public Account getPayee() {
+        return payee;
+    }
 }
