@@ -1,0 +1,1 @@
+alter table tb_account add column version int not null default 0;
