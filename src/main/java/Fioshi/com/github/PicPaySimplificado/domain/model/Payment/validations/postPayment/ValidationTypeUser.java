@@ -1,19 +1,18 @@
 package Fioshi.com.github.PicPaySimplificado.domain.model.Payment.validations.postPayment;
 
 import Fioshi.com.github.PicPaySimplificado.domain.model.Account.Account;
+import Fioshi.com.github.PicPaySimplificado.domain.model.User.TypeUser;
 import Fioshi.com.github.PicPaySimplificado.infra.exception.AuthorizationException;
+import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
-import java.math.BigDecimal;
-
+@Order(2)
 @Component
-public class ValidationPostBalance implements PaymentValidationPost {
+public class ValidationTypeUser implements PaymentValidation {
 
     @Override
     public void validation(Double value, Account payee, Account payer) {
-        if (new BigDecimal(value).compareTo(payer.getBalance()) > 0) {
-            throw new AuthorizationException("Não há dinheiro suficiente na conta");
-        }
-
+        if (payer.getUser().getTypeUser().equals(TypeUser.LOGISTICIAN))
+            throw new AuthorizationException("Esse tipo de usuário não pode realizar transferencias");
     }
 }
