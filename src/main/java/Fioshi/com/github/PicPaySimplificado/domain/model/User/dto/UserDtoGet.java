@@ -1,4 +1,6 @@
-package Fioshi.com.github.PicPaySimplificado.domain.model.User;
+package Fioshi.com.github.PicPaySimplificado.domain.model.User.dto;
+
+import Fioshi.com.github.PicPaySimplificado.domain.model.User.User;
 
 public record UserDtoGet(
 

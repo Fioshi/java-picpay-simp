@@ -1,5 +1,6 @@
-package Fioshi.com.github.PicPaySimplificado.domain.model.User;
+package Fioshi.com.github.PicPaySimplificado.domain.model.User.dto;
 
+import Fioshi.com.github.PicPaySimplificado.domain.model.User.TypeUser;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 

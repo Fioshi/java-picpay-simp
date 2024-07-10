@@ -1,6 +1,5 @@
-package Fioshi.com.github.PicPaySimplificado.domain.model.Payment;
+package Fioshi.com.github.PicPaySimplificado.domain.model.Payment.dto;
 
-import Fioshi.com.github.PicPaySimplificado.domain.model.User.User;
 import jakarta.validation.constraints.NotNull;
 
 public record PaymentDTO(

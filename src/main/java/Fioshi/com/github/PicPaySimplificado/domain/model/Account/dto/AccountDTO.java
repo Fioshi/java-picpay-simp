@@ -1,7 +1,7 @@
-package Fioshi.com.github.PicPaySimplificado.domain.model.Account;
+package Fioshi.com.github.PicPaySimplificado.domain.model.Account.dto;
 
-import Fioshi.com.github.PicPaySimplificado.domain.model.User.User;
-import Fioshi.com.github.PicPaySimplificado.domain.model.User.UserDtoGet;
+import Fioshi.com.github.PicPaySimplificado.domain.model.Account.Account;
+import Fioshi.com.github.PicPaySimplificado.domain.model.User.dto.UserDtoGet;
 import jakarta.validation.constraints.NotNull;
 
 import java.math.BigDecimal;
