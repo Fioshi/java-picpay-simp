@@ -19,8 +19,8 @@ public class AccountController {
     private AccountService accountService;
 
     @GetMapping
-    public ResponseEntity<List<AccountDTO>> getAllAccounts(){
-        var accounts = accountService.getAllAccounts();
-        return ResponseEntity.ok(accounts);
+    public ResponseEntity<AccountDTO> getCurrentAccount(){
+        var account = accountService.getAccount();
+        return ResponseEntity.ok(new AccountDTO(account));
     }
 }

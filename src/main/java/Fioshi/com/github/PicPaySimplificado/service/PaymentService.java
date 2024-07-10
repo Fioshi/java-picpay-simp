@@ -6,6 +6,7 @@ import Fioshi.com.github.PicPaySimplificado.domain.model.Payment.PaymentDTOGet;
 import Fioshi.com.github.PicPaySimplificado.domain.model.Payment.validations.postPayment.PaymentValidation;
 import Fioshi.com.github.PicPaySimplificado.domain.repository.AccountRepository;
 import Fioshi.com.github.PicPaySimplificado.domain.repository.PaymentRepository;
+import Fioshi.com.github.PicPaySimplificado.domain.repository.UserRepository;
 import Fioshi.com.github.PicPaySimplificado.infra.Security.AuthenticateFacade;
 import Fioshi.com.github.PicPaySimplificado.infra.exception.AuthorizationException;
 import jakarta.transaction.Transactional;
@@ -29,6 +30,9 @@ public class PaymentService {
 
     @Autowired
     private AccountRepository accountRepository;
+
+    @Autowired
+    private UserRepository userRepository;
 
     @Autowired
     private AccountService accountService;
@@ -60,7 +64,8 @@ public class PaymentService {
         return CompletableFuture.completedFuture("Pagamento realizado");
     }
 
-    public List<PaymentDTOGet> getPayments(Long id) {
-        return paymentRepository.findAllByPayerId(id).stream().map(PaymentDTOGet::new).toList();
+    public List<PaymentDTOGet> getPayments() {
+        var user = userRepository.findByEmail(facade.getCurrentUser());
+        return paymentRepository.findAllByPayerId(user.getAccount().getId()).stream().map(PaymentDTOGet::new).toList();
     }
 }

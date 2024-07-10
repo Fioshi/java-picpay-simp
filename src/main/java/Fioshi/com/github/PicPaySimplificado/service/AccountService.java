@@ -4,6 +4,8 @@ import Fioshi.com.github.PicPaySimplificado.domain.model.Account.Account;
 import Fioshi.com.github.PicPaySimplificado.domain.model.Account.AccountDTO;
 import Fioshi.com.github.PicPaySimplificado.domain.model.User.User;
 import Fioshi.com.github.PicPaySimplificado.domain.repository.AccountRepository;
+import Fioshi.com.github.PicPaySimplificado.domain.repository.UserRepository;
+import Fioshi.com.github.PicPaySimplificado.infra.Security.AuthenticateFacade;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -16,6 +18,12 @@ public class AccountService {
 
     @Autowired
     private AccountRepository accountRepository;
+
+    @Autowired
+    private UserRepository userRepository;
+
+    @Autowired
+    private AuthenticateFacade facade;
 
     @Transactional
     public void insert(User user){
@@ -37,7 +45,8 @@ public class AccountService {
         return accountRepository.findAll().stream().map(AccountDTO::new).toList();
     }
 
-    public Account getAccount (Long id) {
-        return accountRepository.getReferenceById(id);
+    public Account getAccount () {
+        var user = userRepository.findByEmail(facade.getCurrentUser());
+        return accountRepository.getReferenceById(user.getAccount().getId());
     }
 }
