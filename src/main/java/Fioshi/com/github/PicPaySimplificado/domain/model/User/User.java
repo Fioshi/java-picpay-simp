@@ -1,10 +1,10 @@
 package Fioshi.com.github.PicPaySimplificado.domain.model.User;
 
 import Fioshi.com.github.PicPaySimplificado.domain.model.Account.Account;
+import Fioshi.com.github.PicPaySimplificado.domain.model.User.dto.UserDto;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
-import lombok.Getter;
 import lombok.NoArgsConstructor;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;

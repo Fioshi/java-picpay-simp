@@ -1,11 +1,10 @@
 package Fioshi.com.github.PicPaySimplificado.controller;
 
 import Fioshi.com.github.PicPaySimplificado.domain.model.User.User;
-import Fioshi.com.github.PicPaySimplificado.domain.model.User.UserDto;
-import Fioshi.com.github.PicPaySimplificado.domain.model.User.UserLoginDto;
-import Fioshi.com.github.PicPaySimplificado.domain.repository.UserRepository;
-import Fioshi.com.github.PicPaySimplificado.service.TokenService;
-import Fioshi.com.github.PicPaySimplificado.service.UserService;
+import Fioshi.com.github.PicPaySimplificado.domain.model.User.dto.UserDto;
+import Fioshi.com.github.PicPaySimplificado.domain.model.User.dto.UserLoginDto;
+import Fioshi.com.github.PicPaySimplificado.domain.service.TokenService;
+import Fioshi.com.github.PicPaySimplificado.domain.service.UserService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

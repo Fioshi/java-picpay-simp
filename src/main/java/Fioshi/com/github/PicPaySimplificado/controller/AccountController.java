@@ -1,15 +1,13 @@
 package Fioshi.com.github.PicPaySimplificado.controller;
 
-import Fioshi.com.github.PicPaySimplificado.domain.model.Account.AccountDTO;
-import Fioshi.com.github.PicPaySimplificado.service.AccountService;
-import org.apache.coyote.Response;
+import Fioshi.com.github.PicPaySimplificado.domain.model.Account.dto.AccountDTO;
+import Fioshi.com.github.PicPaySimplificado.domain.service.AccountService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
-import java.util.List;
 
 @RestController
 @RequestMapping("/picpay/account")

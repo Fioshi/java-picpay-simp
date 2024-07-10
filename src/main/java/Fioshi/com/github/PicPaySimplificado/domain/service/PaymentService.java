@@ -1,9 +1,9 @@
-package Fioshi.com.github.PicPaySimplificado.service;
+package Fioshi.com.github.PicPaySimplificado.domain.service;
 
 import Fioshi.com.github.PicPaySimplificado.domain.model.Payment.Payment;
-import Fioshi.com.github.PicPaySimplificado.domain.model.Payment.PaymentDTO;
-import Fioshi.com.github.PicPaySimplificado.domain.model.Payment.PaymentDTOGet;
-import Fioshi.com.github.PicPaySimplificado.domain.model.Payment.validations.postPayment.PaymentValidation;
+import Fioshi.com.github.PicPaySimplificado.domain.model.Payment.dto.PaymentDTO;
+import Fioshi.com.github.PicPaySimplificado.domain.model.Payment.dto.PaymentDTOGet;
+import Fioshi.com.github.PicPaySimplificado.domain.model.validations.payment.PaymentValidation;
 import Fioshi.com.github.PicPaySimplificado.domain.repository.AccountRepository;
 import Fioshi.com.github.PicPaySimplificado.domain.repository.PaymentRepository;
 import Fioshi.com.github.PicPaySimplificado.domain.repository.UserRepository;
@@ -14,7 +14,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 
-import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
 

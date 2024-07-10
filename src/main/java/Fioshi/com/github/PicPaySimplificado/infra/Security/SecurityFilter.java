@@ -1,7 +1,7 @@
 package Fioshi.com.github.PicPaySimplificado.infra.Security;
 
 import Fioshi.com.github.PicPaySimplificado.domain.repository.UserRepository;
-import Fioshi.com.github.PicPaySimplificado.service.TokenService;
+import Fioshi.com.github.PicPaySimplificado.domain.service.TokenService;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;

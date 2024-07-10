@@ -1,4 +1,4 @@
-package Fioshi.com.github.PicPaySimplificado.service;
+package Fioshi.com.github.PicPaySimplificado.domain.service;
 
 import Fioshi.com.github.PicPaySimplificado.domain.model.User.User;
 import org.springframework.stereotype.Service;

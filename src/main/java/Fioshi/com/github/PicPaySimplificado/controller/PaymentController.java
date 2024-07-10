@@ -1,14 +1,12 @@
 package Fioshi.com.github.PicPaySimplificado.controller;
 
-import Fioshi.com.github.PicPaySimplificado.domain.model.Payment.PaymentDTO;
-import Fioshi.com.github.PicPaySimplificado.domain.model.Payment.PaymentDTOGet;
-import Fioshi.com.github.PicPaySimplificado.service.PaymentService;
+import Fioshi.com.github.PicPaySimplificado.domain.model.Payment.dto.PaymentDTO;
+import Fioshi.com.github.PicPaySimplificado.domain.model.Payment.dto.PaymentDTOGet;
+import Fioshi.com.github.PicPaySimplificado.domain.service.PaymentService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Description;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.ExecutionException;
 

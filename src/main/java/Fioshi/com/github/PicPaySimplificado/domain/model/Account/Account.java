@@ -35,7 +35,6 @@ public class Account {
     }
 
     public void transfer(BigDecimal value){
-
          this.balance = this.balance.subtract(value);
     }
 

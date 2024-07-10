@@ -1,7 +1,7 @@
-package Fioshi.com.github.PicPaySimplificado.service;
+package Fioshi.com.github.PicPaySimplificado.domain.service;
 
 import Fioshi.com.github.PicPaySimplificado.domain.model.Account.Account;
-import Fioshi.com.github.PicPaySimplificado.domain.model.Account.AccountDTO;
+import Fioshi.com.github.PicPaySimplificado.domain.model.Account.dto.AccountDTO;
 import Fioshi.com.github.PicPaySimplificado.domain.model.User.User;
 import Fioshi.com.github.PicPaySimplificado.domain.repository.AccountRepository;
 import Fioshi.com.github.PicPaySimplificado.domain.repository.UserRepository;

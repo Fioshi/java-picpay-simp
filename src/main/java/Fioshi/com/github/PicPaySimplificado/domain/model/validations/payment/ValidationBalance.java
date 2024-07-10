@@ -1,4 +1,4 @@
-package Fioshi.com.github.PicPaySimplificado.domain.model.Payment.validations.postPayment;
+package Fioshi.com.github.PicPaySimplificado.domain.model.validations.payment;
 
 import Fioshi.com.github.PicPaySimplificado.domain.model.Account.Account;
 import Fioshi.com.github.PicPaySimplificado.infra.exception.AuthorizationException;
