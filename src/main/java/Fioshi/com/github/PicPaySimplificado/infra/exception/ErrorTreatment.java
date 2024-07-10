@@ -11,4 +11,9 @@ public class ErrorTreatment {
     public ResponseEntity tratarErroRegraDeNegocio(AuthorizationException ex){
         return ResponseEntity.badRequest().body(ex.getMessage());
     }
+
+    @ExceptionHandler(SubscribeException.class)
+    public ResponseEntity subscribleException(SubscribeException ex){
+        return ResponseEntity.badRequest().body(ex.getMessage());
+    }
 }
