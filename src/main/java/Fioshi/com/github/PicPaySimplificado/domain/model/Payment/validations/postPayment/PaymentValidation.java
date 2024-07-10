@@ -3,7 +3,7 @@ package Fioshi.com.github.PicPaySimplificado.domain.model.Payment.validations.po
 import Fioshi.com.github.PicPaySimplificado.domain.model.Account.Account;
 
 
-public interface PaymentValidationPost {
+public interface PaymentValidation {
 
     void validation(Double value, Account payee, Account payer);
 

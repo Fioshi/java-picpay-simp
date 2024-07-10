@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.io.IOException;
 import java.util.List;
+import java.util.concurrent.ExecutionException;
 
 @RestController
 @RequestMapping("/picpay/payment")
@@ -18,8 +19,9 @@ public class PaymentController {
     private PaymentService service;
 
     @PostMapping
-    public void payment(@RequestBody PaymentDTO dto) throws IOException {
-        service.payment(dto);
+    public ResponseEntity<String> payment(@RequestBody PaymentDTO dto) throws ExecutionException, InterruptedException {
+        var result = service.payment(dto).get();
+        return ResponseEntity.ok(result);
     }
 
     @GetMapping("payer/{payer}")
