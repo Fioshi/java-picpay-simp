@@ -29,12 +29,10 @@ public class SecurityConfigurations {
                 .csrf(AbstractHttpConfigurer::disable)
                 .sessionManagement(sm -> sm.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authorizeHttpRequests(req -> {
-                    req.requestMatchers("/admin/**").hasRole("ADMIN");
-                    req.requestMatchers("/swagger-ui/**",
+                    req.requestMatchers("/picpay/user/", "picpay/user/**").permitAll();
+                    req.requestMatchers("/swagger-ui.html",
                             "/swagger-resources/*",
                             "/v3/api-docs/**").permitAll();
-                    req.requestMatchers(HttpMethod.POST, "/pedidos").hasRole("COMPRADOR");
-                    req.requestMatchers("/picpay/user/", "picpay/user/**").permitAll();
                     req.anyRequest().authenticated();
                 })
                 .addFilterBefore(filterChain, UsernamePasswordAuthenticationFilter.class)

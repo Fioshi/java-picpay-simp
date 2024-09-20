@@ -1,4 +1,4 @@
-package Fioshi.com.github.PicPaySimplificado.domain.service;
+package Fioshi.com.github.PicPaySimplificado.infra.Security;
 
 import Fioshi.com.github.PicPaySimplificado.domain.model.User.User;
 import com.auth0.jwt.JWT;
